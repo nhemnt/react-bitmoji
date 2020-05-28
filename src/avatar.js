@@ -4,7 +4,6 @@ import { Piece } from "avataaars";
 import Avatar from "avataaars";
 import map from "lodash/map";
 import FileSaver from "file-saver";
-import "./App.css";
 import options from "./options";
 
 export default function Avataaar(props) {
