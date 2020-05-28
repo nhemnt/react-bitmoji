@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useState } from "react";
+import Avataaar from "./avatar";
+const App = () => {
+  const [Attributes, setAttributes] = useState({
+    topType: "ShortHairDreads02",
+    accessoriesType: "Prescription02",
+    hairColor: "BrownDark",
+    facialHairType: "Blank",
+    clotheType: "Hoodie",
+    clotheColor: "PastelBlue",
+    eyeType: "Happy",
+    eyebrowType: "Default",
+    mouthType: "Smile",
+    avatarStyle: "Circle",
+    skinColor: "Light",
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Avataaar
+        value={Attributes}
+        onChange={setAttributes}
+      />
     </div>
   );
-}
+};
 
 export default App;
