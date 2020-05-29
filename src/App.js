@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Avataaar from "./avatar";
 import "./App.css";
 
+import {GithuFork} from "./style";
+
 const App = () => {
   const [Attributes, setAttributes] = useState({
     topType: "ShortHairDreads02",
@@ -18,14 +20,13 @@ const App = () => {
   });
   return (
     <div>
-      <a
-        class="github-fork"
+      <GithuFork
         href="https://github.com/nhemnt/react-bitmoji"
         title="Fork me on GitHub"
         data-ribbon="Fork me on GitHub"
       >
         Fork me on GitHub
-      </a>
+      </GithuFork>
       <Avataaar value={Attributes} onChange={setAttributes} />
     </div>
   );

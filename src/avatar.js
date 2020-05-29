@@ -5,6 +5,8 @@ import Avatar from "avataaars";
 import map from "lodash/map";
 import FileSaver from "file-saver";
 import options from "./options";
+import { Button, DownloadRow } from "./style";
+import { DownloadIcon } from "./svg";
 
 export default function Avataaar(props) {
   const canvasRef = useRef(null);
@@ -12,7 +14,6 @@ export default function Avataaar(props) {
   const [selectedTab, setSelectedTab] = useState("top");
 
   const pieceClicked = (attr, val) => {
-    debugger;
     var newAttributes = {
       ...props.value,
       [attr]: val,
@@ -161,12 +162,14 @@ export default function Avataaar(props) {
           );
         })}
       </div>
-      <div style={{ textAlign: "center" }}>
-        <button onClick={onDownloadSVG} style={{ marginRight: "6px" }}>
-          SVG
-        </button>{" "}
-        <button onClick={onDownloadPNG}>PNG</button>{" "}
-      </div>
+      <DownloadRow>
+        <Button onClick={onDownloadSVG}>
+          <DownloadIcon /> SVG
+        </Button>{" "}
+        <Button onClick={onDownloadPNG}>
+          <DownloadIcon /> PNG
+        </Button>{" "}
+      </DownloadRow>
 
       <canvas
         style={{ display: "none" }}
