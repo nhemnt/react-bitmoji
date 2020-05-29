@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Avataaar from "./avatar";
-import "./App.css";
 
-import {GithuFork} from "./style";
+import { GithuFork } from "./style";
 
 const App = () => {
   const [Attributes, setAttributes] = useState({

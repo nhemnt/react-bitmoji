@@ -5,7 +5,20 @@ import Avatar from "avataaars";
 import map from "lodash/map";
 import FileSaver from "file-saver";
 import options from "./options";
-import { Button, DownloadRow } from "./style";
+import {
+  Button,
+  DownloadRow,
+  Tabs,
+  Tabpanes,
+  ColorContainer,
+  Container,
+  StyledAvatar,
+  Pieces,
+  Color,
+  None,
+  Tab,
+  Tabpane,
+} from "./style";
 import { DownloadIcon } from "./svg";
 
 export default function Avataaar(props) {
@@ -62,59 +75,51 @@ export default function Avataaar(props) {
   };
 
   return (
-    <div className={"container"}>
-      <div className={"avatar"}>
+    <Container>
+      <StyledAvatar>
         <Avatar
           ref={avatarRef}
           style={{ width: "200px", height: "200px" }}
           {...props.value}
         />
-      </div>
-      <div className={"tabs"}>
+      </StyledAvatar>
+      <Tabs>
         {map(options, (option) => {
           return (
-            <div
-              className={`tab ${
-                selectedTab == option.type ? "selectedTab" : ""
-              }`}
+            <Tab
+              selectedTab={selectedTab}
+              type={option.type}
               onClick={() => setSelectedTab(option.type)}
             >
               {option.label}
-            </div>
+            </Tab>
           );
         })}
-      </div>
-      <div className={"tabpanes"}>
-        {map(options, (option) => {
+      </Tabs>
+      <Tabpanes>
+        {options.map((option) => {
           return (
-            <div
-              className={`tabpane ${
-                selectedTab == option.type ? "visible" : ""
-              }`}
-            >
-              {map(option.values, (val) => {
+            <Tabpane selectedTab={selectedTab} type={option.type}>
+              {option.values.map((val) => {
                 var attr = {};
                 attr[option.attribute] = val;
                 if (option.transform) {
                   attr.style = { transform: option.transform };
                 }
                 return (
-                  <div
-                    className={"piece"}
-                    onClick={() => pieceClicked(option.attribute, val)}
-                  >
+                  <Pieces onClick={() => pieceClicked(option.attribute, val)}>
                     {option.type === "avatarStyle" ? (
                       <span style={{ margin: "5px" }}>{val}</span>
                     ) : (
                       <Piece pieceSize="50" pieceType={option.type} {...attr} />
                     )}
                     {(val === "Blank" || val === "NoHair") && (
-                      <div className={"none"}>(none)</div>
+                      <None>(none)</None>
                     )}
-                  </div>
+                  </Pieces>
                 );
               })}
-              <div className={"colorContainer"}>
+              <ColorContainer>
                 {option.colors &&
                   (option.type !== "top" ||
                     option.hats.indexOf(props.value.topType) === -1) &&
@@ -123,8 +128,7 @@ export default function Avataaar(props) {
                   props.value.topType !== "LongHairFrida" &&
                   map(option.colors, (color, colorName) => {
                     return (
-                      <div
-                        className={"color"}
+                      <Color
                         style={{
                           backgroundColor: color,
                           border:
@@ -135,7 +139,7 @@ export default function Avataaar(props) {
                         onClick={() =>
                           pieceClicked(option.colorAttribute, colorName)
                         }
-                      ></div>
+                      ></Color>
                     );
                   })}
 
@@ -144,8 +148,7 @@ export default function Avataaar(props) {
                   props.value.topType !== "Hat" &&
                   map(option.hatColors, (color, colorName) => {
                     return (
-                      <div
-                        className={"color"}
+                      <Color
                         style={{
                           backgroundColor: color,
                           border:
@@ -154,14 +157,14 @@ export default function Avataaar(props) {
                               : "1px solid " + color,
                         }}
                         onClick={() => pieceClicked("hatColor", colorName)}
-                      ></div>
+                      ></Color>
                     );
                   })}
-              </div>
-            </div>
+              </ColorContainer>
+            </Tabpane>
           );
         })}
-      </div>
+      </Tabpanes>
       <DownloadRow>
         <Button onClick={onDownloadSVG}>
           <DownloadIcon /> SVG
@@ -177,6 +180,6 @@ export default function Avataaar(props) {
         height="560"
         ref={canvasRef}
       />
-    </div>
+    </Container>
   );
 }

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-export const DownloadIcon = () =>
+export const DownloadIcon = () => (
   <svg
     version="1.1"
     id="Layer_1"
@@ -33,3 +33,4 @@ export const DownloadIcon = () =>
       </g>
     </g>
   </svg>
+);
