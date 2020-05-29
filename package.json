@@ -1,7 +1,11 @@
 {
-  "name": "office-emoji",
+  "name": "react-bitmoji",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "bitmoji",
+    "react bitmoji"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
