@@ -1,12 +1,12 @@
-# Project Status (please read)
+# Project Status
 
 Simple avatar generator React component for [Avataaars](https://avataaars.com/)
 
 <p align="center">
-<img src='example/example1.png?raw=true' style='width: 300px; height: 300px;' />
-<img src='example/example2.png?raw=true' style='width: 300px; height: 300px;' />
-<img src='example/example3.png?raw=true' style='width: 300px; height: 300px;' />
-<img src='example/example3.png?raw=true' style='width: 300px; height: 300px;' />
+<img src='example/example1.png?raw=true' height="200px"' />
+<img src='example/example2.png?raw=true' height="200px"' />
+<img src='example/example3.png?raw=true' height="200px"' />
+<img src='example/example4.png?raw=true' height="200px"' />
 </p>
 
 ---
