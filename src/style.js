@@ -99,11 +99,13 @@ export const GithuFork = styled.a(
 export const Container = styled.div(
   () => css`
     position: relative;
+    border-radius: 8px;
     width: 400px;
     margin: auto;
     background: #f3f3f3;
     margin-top: 20px;
     padding: 20px 0;
+    box-shadow: 1px 1px 0px #f7f7f7, 2px 2px 0px #999, 3px 3px 0px #999, 4px 4px 0px #d4d4d4, 5px 5px 0px #999, 6px 6px 0px #999;
   `
 );
 
