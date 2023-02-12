@@ -19,6 +19,14 @@ const App = () => {
   });
   return (
     <div>
+       <GithuFork
+        href="https://bluetrends.in/"
+        title="Bluetrends"
+        data-ribbon="Check Bluetrends"
+        target="_blank"
+      >
+         Check Bluetrends
+      </GithuFork>
       <GithuFork
         href="https://github.com/nhemnt/react-bitmoji"
         title="Fork me on GitHub"
@@ -27,6 +35,7 @@ const App = () => {
         Fork me on GitHub
       </GithuFork>
       <Avataaar value={Attributes} onChange={setAttributes} />
+     
     </div>
   );
 };
