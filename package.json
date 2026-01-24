@@ -12,7 +12,7 @@
     "@testing-library/user-event": "^10.4.0",
     "avataaars": "^1.2.1",
     "file-saver": "^2.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^4.0.3",
